@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8A0F4A1-FE4B-4D1D-8157-14789C2A8AC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Store</RootNamespace>
+    <AssemblyName>Store</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Balance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Balance.Designer.cs">
+      <DependentUpon>Balance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateLogin.Designer.cs">
+      <DependentUpon>CreateLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="c_storeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>c_storeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="c_store_products.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>c_store_products.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBconn.cs" />
+    <Compile Include="CustInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustInfo.Designer.cs">
+      <DependentUpon>CustInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemDetails.Designer.cs">
+      <DependentUpon>ItemDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainStoreFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreFrame.Designer.cs">
+      <DependentUpon>MainStoreFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchases.Designer.cs">
+      <DependentUpon>Purchases.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Purchases.resx">
+      <DependentUpon>Purchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="c_storeDataSet.xsc">
+      <DependentUpon>c_storeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="c_storeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>c_storeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="c_storeDataSet.xss">
+      <DependentUpon>c_storeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="c_store_products.xsc">
+      <DependentUpon>c_store_products.xsd</DependentUpon>
+    </None>
+    <None Include="c_store_products.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>c_store_products.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="c_store_products.xss">
+      <DependentUpon>c_store_products.xsd</DependentUpon>
+    </None>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Balance.resx">
+      <DependentUpon>Balance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateLogin.resx">
+      <DependentUpon>CreateLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustInfo.resx">
+      <DependentUpon>CustInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemDetails.resx">
+      <DependentUpon>ItemDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreFrame.resx">
+      <DependentUpon>MainStoreFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\invoice_item.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="c_store" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-NUI4UC8C\SQLEXPRESS;Initial Catalog=c_store;Integrated Security=True" SettingsObjectName="Store.Properties.Settings" SettingsPropertyName="c_storeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.account" Member="accounts">
+    <Type Name="account">
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CustPassword" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="custId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="account_Customer" Member="Customers" ThisKey="AccountID" OtherKey="AccountId" Type="Customer" />
+      <Association Name="account_invoice" Member="invoices" ThisKey="AccountID" OtherKey="accountID" Type="invoice" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CState" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="account_Customer" Member="account" ThisKey="AccountId" OtherKey="AccountID" Type="account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.invoice" Member="invoices">
+    <Type Name="invoice">
+      <Column Name="invoiceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="totalPrice" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="accountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dateOrdered" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="invoice_invoice_item" Member="invoice_items" ThisKey="invoiceID" OtherKey="invoiceID" Type="invoice_item" />
+      <Association Name="account_invoice" Member="account" ThisKey="accountID" OtherKey="AccountID" Type="account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.invoice_item" Member="invoice_items">
+    <Type Name="invoice_item">
+      <Column Name="invoiceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productID" Type="System.String" DbType="VarChar(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantityOrdered" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Association Name="invoice_invoice_item" Member="invoice" ThisKey="invoiceID" OtherKey="invoiceID" Type="invoice" IsForeignKey="true" />
+      <Association Name="Product_invoice_item" Member="Product" ThisKey="productID" OtherKey="Pcode" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="Pcode" Type="System.String" DbType="VarChar(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Product_invoice_item" Member="invoice_items" ThisKey="Pcode" OtherKey="productID" Type="invoice_item" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cartItems" Member="cartItems">
+    <Type Name="cartItem">
+      <Column Name="Pcode" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="quant_ordered" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cartItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

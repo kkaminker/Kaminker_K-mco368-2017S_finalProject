@@ -1,0 +1,16 @@
+C:\A_KR\college\mco_368_ATOOP\Store\Store\bin\Debug\Store.exe.config
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.csprojResolveAssemblyReference.cache
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.Properties.Resources.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.csproj.GenerateResource.Cache
+C:\A_KR\college\mco_368_ATOOP\Store\Store\bin\Debug\Store.exe
+C:\A_KR\college\mco_368_ATOOP\Store\Store\bin\Debug\Store.pdb
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.exe
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.pdb
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.Login.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.CreateLogin.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.CustInfo.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.MainStoreFrame.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.ItemDetails.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.Cart.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.Balance.resources
+C:\A_KR\college\mco_368_ATOOP\Store\Store\obj\Debug\Store.Purchases.resources
